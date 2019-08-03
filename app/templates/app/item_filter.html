@@ -45,42 +45,453 @@
                             {# item_detail_contents.html を参考に必要な項目を追加してください #}
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>1_文字列</p>
+                                    <p>1_化石ID</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.sample_1|default_if_none:"未入力" }}</p>
+                                    <p>{{  item.i_01_fossil_ID|default_if_none:"未入力"  }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>2_メモ</p>
+                                    <p>2_分類CD</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.sample_2|default_if_none:"未入力" }}</p>
+                                    <p>{{  item.i_02_category_CD|default_if_none:"未入力" }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>3_整数</p>
+                                    <p>3_名称</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.sample_3|default_if_none:"未入力" }}</p>
+                                    <p>{{  item.i_03_fossil_name|default_if_none:"未入力" }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>作成者</p>
+                                    <p>4_愛称</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.created_by.get_full_name }}</p>
+                                    <p>{{  item.i_04_nickname|default_if_none:"未入力" }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>作成時間</p>
+                                    <p>5_学名</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.created_at|date:"Y/m/d G:i:s" }}</p>
+                                    <p>{{  item.i_05_binomen|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>6_界</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_06_kingdom|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>7_門</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_07_phylum|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>8_亜門</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_08_subphylum|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>9_綱</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_09_class_nm|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>10_亜綱</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_10_subclass|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>11_下綱</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_11_infraclass|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>12_上目</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_12_superorder|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>13_目</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_13_order|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>14_亜目</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_14_suborder|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>15_下目</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_15_infraorder|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>16_類</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_16_group|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>17_上科</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_17_superfamily|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>18_科</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_18_family|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>19_亜科</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_19_subfamily|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>20_属</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_20_genus|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>21_亜属</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_21_subgenus|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>22_発掘部位</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_22_part|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>23_部位サイズ</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_23_part_size|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-5 col-sm-3">
+                                        <p>24_推定体長</p>
+                                    </div>
+                                    <div class="col-7 col-sm-9">
+                                        <p>{{ item.i_24_estimate_length|default_if_none:"未入力" }}</p>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>25_産地CD</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_25_product_CD|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>26_郵便番号</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_26_zip_CD|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>27_産地(県)</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_27_prefecture|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>28_産地(市)</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_28_city|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>29_地層</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_29_stratum|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-5 col-sm-3">
+                                        <p>30_発見年</p>
+                                    </div>
+                                    <div class="col-7 col-sm-9">
+                                        <p>{{ item.i_30_discovery_date|default_if_none:"未入力" }}</p>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>31_発見者</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_31_discoverer|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>32_発見者職業</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_32_discoverer_job|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-5 col-sm-3">
+                                        <p>33_発表区分</p>
+                                    </div>
+                                    <div class="col-7 col-sm-9">
+                                        <p>{{ item.i_33_announced_flag|default_if_none:"未入力" }}</p>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                    <div class="col-5 col-sm-3">
+                                        <p>34_発表年</p>
+                                    </div>
+                                    <div class="col-7 col-sm-9">
+                                        <p>{{ item.i_34_announced_date|default_if_none:"未入力" }}</p>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>35_報告者</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_35_reporter|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>36_報告者職業</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_36_reporter_job|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>37_地質年代CD</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_37_geologic_CD|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>38_累代</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_38_eon|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>39_代</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_39_era|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>40_紀</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_40_period|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>41_世</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_41_epoch|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>42_期</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_42_age|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>43_年代</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_43_year_ago|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>44_概要</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_44_outline|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>46_所蔵館</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_46_collect_museum|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>47_標本番号</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_47_sumple_number|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>48_参考文献1</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_48_works_cited１|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>49_参考文献2</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_49_works_cited2|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>50_参考文献3</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_50_works_cited3|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>51_添付データ1</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_51_attach1|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>52_添付データ1コメント</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_52_attach1_comment|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>53_添付データ2</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_53_attach2|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>54_添付データ2コメント</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_54_attach2_comment|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>55_添付データ3</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_55_attach3|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>56_添付データ3コメント</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_56_attach3_comment|default_if_none:"未入力" }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-sm-3">
+                                    <p>57_更新日</p>
+                                </div>
+                                <div class="col-7 col-sm-9">
+                                    <p>{{ item.i_57_last_update|default_if_none:"未入力" }}</p>
                                 </div>
                             </div>
                             <div class="row">
